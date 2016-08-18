@@ -1,0 +1,41 @@
+.main{
+	flex:1;
+	overflow: hidden;
+	.post-list{
+		background-color:#FFF;
+		margin-top:15px;
+		.post-item {
+			position: relative;
+			margin:0 20px;
+			height:60px;
+			&-title{
+				color:#444;
+				font-size: 14px;
+				font-weight: bold;
+				line-height: 40px;
+			}
+			.icon-zan{
+				font-size: 12px;
+				position: absolute;
+				left:0;
+				bottom:5px;
+				color:#666;
+			}
+			.like-num{
+				font-size: 12px;
+				position: absolute;
+				left:20px;
+				bottom: 4px;
+				color:#666;
+			}
+		}
+	}
+	.load-nextpage,
+	.last-page{
+		height:30px;
+		line-height: 30px;
+		font-size: 12px;
+		color:#666;
+		text-align: center;
+	}
+}

@@ -28,8 +28,11 @@ class PostList extends React.Component{
 									<a href={post.url} target="_blank">
 										<span className="post-item-title">{post.title}</span>
 									</a>
-									<i className="iconfont icon-zan"></i>
-									<b className="like-num">0</b>
+									<p className="post-detail">
+										<span className="post-site">{post.site}</span>
+										<i className="iconfont icon-zan"></i>
+										<b className="like-num">0</b>
+									</p>
 								</div>
 							)
 						}) 

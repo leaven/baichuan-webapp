@@ -48,7 +48,9 @@ module.exports = {
       },
       {
             test: /\.(less|css)$/, 
-            loader: extractLESS.extract(['style','css','autoprefixer','less'])
+            exclude: /node_modules/,
+            loader: 'style!css!autoprefixer!less'
+            // loader: extractLESS.extract('style-loader','css-loader','autoprefixer-loader','less-loader')
       }
     ]
   },

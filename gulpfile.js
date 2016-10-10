@@ -4,6 +4,7 @@ var webpack = require("webpack");
 var WebpackDevServer = require("webpack-dev-server");
 var cleanDest = require('gulp-clean-dest');
 var config = require('./webpack.config.js');
+var path                      = require('path');
 
 gulp.task("dev", ['clean'], function(callback) {
      // gulp.src("public/**").pipe(cleanDest("public"));
@@ -41,6 +42,20 @@ gulp.task("dev", ['clean'], function(callback) {
 });
 gulp.task("webpack", ['clean'], function(callback) {
     
+    webpack(config, function(err, stat) {
+        if(err) {
+            console.log(err);
+        }
+        callback();
+    });
+
+});
+gulp.task("build", function(callback) {
+    
+    gulp.src("/home/xiaoju/webroot/baichuan/**").pipe(cleanDest("/home/xiaoju/webroot/baichuan"));
+
+    config.output.path = path.resolve('/home/xiaoju/webroot/baichuan');
+
     webpack(config, function(err, stat) {
         if(err) {
             console.log(err);
